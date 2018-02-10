@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZRPG", "ZRPG\ZRPG.csproj", "{FC73A6BB-0706-4552-B74F-3473CB3452BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC73A6BB-0706-4552-B74F-3473CB3452BA}.Debug|x86.ActiveCfg = Debug|x86
+		{FC73A6BB-0706-4552-B74F-3473CB3452BA}.Debug|x86.Build.0 = Debug|x86
+		{FC73A6BB-0706-4552-B74F-3473CB3452BA}.Release|x86.ActiveCfg = Release|x86
+		{FC73A6BB-0706-4552-B74F-3473CB3452BA}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1B881A7-C3E0-4715-98CA-BD6E79E5CBB9}
+	EndGlobalSection
+EndGlobal
