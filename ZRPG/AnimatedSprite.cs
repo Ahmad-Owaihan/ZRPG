@@ -14,6 +14,8 @@ namespace ZRPG
         public int Columns { get; set; }
         private int currentFrame;
         private int totalFrames;
+        private double timer;
+        private double speed;
 
         public AnimatedSprite(Texture2D texture, int rows, int columns)
         {
@@ -22,16 +24,23 @@ namespace ZRPG
             Columns = columns;
             currentFrame = 0;
             totalFrames = Rows * Columns;
+            speed = 0.08d;
+            timer = speed;
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
-            currentFrame++;
+            timer -= gameTime.ElapsedGameTime.TotalSeconds;
+            if (timer <= 0)
+            {
+                currentFrame++;
+                timer = speed;
+            }
             if (currentFrame == totalFrames)
                 currentFrame = 0;
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location, SpriteEffects spriteEffects, Color color)
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
@@ -41,9 +50,12 @@ namespace ZRPG
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
-            spriteBatch.Begin();
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, color, 0, new Vector2(0,0), spriteEffects, 0);
+        }
+
+        public void SetFrame(int newFrame)
+        {
+            currentFrame = newFrame;
         }
     }
 }
